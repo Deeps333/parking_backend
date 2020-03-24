@@ -1,39 +1,26 @@
 pipeline {
    agent any
-	stages {
+	options {
+             skipDefaultCheckout true
+	}
+       stages {
       stage('Git Checkout') {
          steps {
-            git 'https://github.com/KajalAgarwal26/parking_backend.git'
+           checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/Deeps333/parking_backend.git']]])
 		}
 	}
-	stage('Build') {
-		steps {
-			withSonarQubeEnv('sonar') {
-				sh '/opt/maven/bin/mvn clean verify sonar:sonar -Dmaven.test.skip=true'
-			}
-		}
-	}
-	stage("Quality Gate") {
-            steps {
-              timeout(time: 5, unit: 'MINUTES') {
-                waitForQualityGate abortPipeline: true
-              }
-            }
-          }
-	stage ('Deploy') {
-		steps {
-			sh '/opt/maven/bin/mvn clean deploy -Dmaven.test.skip=true'
-		}
-	}
-	stage ('Release') {
-		steps {
-			sh 'export JENKINS_NODE_COOKIE=dontkillme ;nohup java -jar $WORKSPACE/target/*.jar &'
-		}
-	}
-}
-	post {
-        always {
-            emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}", recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
-        }
-    }
-}
+	stage ('Build')
+	   
+	    {steps{
+                sh '/usr/share/maven/bin/mvn clean package -Dmaven.test.skip=true'
+	    }    }
+        stage ('Update the Version')
+		{ steps {
+                sh '/usr/share/maven/bin/mvn --batch-mode release:clean release:prepare release:perform -DreleaseVersion-5.1.1 -DdevelopmentVersion-1.6.2-SNAPSHOT -Dmaven.test.skip=true'
+	        sh 'sudo git add .'
+                sh 'sudo git commit -m "Updated pom" pom.xml'
+                sh 'sudo git push https://Deeps333:Deepanshu333@github.com/Deeps333/parking_backend.git HEAD:master'
+                }       }
+      }
+          
+   }
