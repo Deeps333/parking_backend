@@ -133,7 +133,7 @@
                               <autoVersionSubmodules>true</autoVersionSubmodules>
                               <pushChanges>false</pushChanges>
                               <localCheckout>true</localCheckout>
-                              <tagNameFormat>v@{project.version}</tagNameFormat>
+                              <tagNameFormat>@{project.version}</tagNameFormat>
                            </configuration>
                         </plugin>
 
