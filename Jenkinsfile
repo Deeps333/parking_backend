@@ -22,13 +22,13 @@ pipeline {
 		stage ('Database Migration'){
 			steps {
 				sh '/usr/share/maven/bin/mvn compile'
-                                flywayrunner commandLineArgs: '', credentialsId: 'flyway', flywayCommand: 'migrate', installationName: 'usr/local/bin/flyway', locations: '/var/lib/jenkins/tools/sp.sd.flywayrunner.installation.FlywayInstallation/usr_local_bin_flyway/sql', url: 'jdbc:mysql://35.154.66.159:3306/newfly'      
+                                flywayrunner commandLineArgs: '', credentialsId: 'flyway', flywayCommand: 'migrate', installationName: 'usr/local/bin/flyway', locations: '/flyway-6.3.2/sql', url: 'jdbc:mysql://35.154.66.159:3306/newfly'      
 			}
 		}
                 stage ('Database Migration UAT'){
 			steps {
 				sh '/usr/share/maven/bin/mvn compile'
-                                flywayrunner commandLineArgs: '', credentialsId: 'flyway', flywayCommand: 'migrate', installationName: 'usr/local/bin/flyway', locations: '/var/lib/jenkins/tools/sp.sd.flywayrunner.installation.FlywayInstallation/usr_local_bin_flyway/sql', url: 'jdbc:mysql://13.233.244.148:3306/flydb'      
+                                flywayrunner commandLineArgs: '', credentialsId: 'flyway', flywayCommand: 'migrate', installationName: 'usr/local/bin/flyway', locations: '/flyway-6.3.2/sql', url: 'jdbc:mysql://13.233.244.148:3306/flydb'      
 			}
 		}
 }
