@@ -77,7 +77,8 @@
                 <dependency>
                         <groupId>org.flywaydb</groupId>
                         <artifactId>flyway-core</artifactId>
-			<version>6.3.2</version>    
+			<version>6.3.2</version> 
+                </dependency>   
 	</dependencies>
 	<scm>
 		<connection>scm:https://github.com/Deeps333/parking_backend.git</connection>
