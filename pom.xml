@@ -153,9 +153,7 @@
                                 <schemas>
                                    <schema>flydb</schema>
                                 </schemas>
-                                <locations>
-                                       <location>sql/migrations</location>
-                                </locations>
+                                
                             </configuration>
                         </plugin>                            
 		</plugins>
