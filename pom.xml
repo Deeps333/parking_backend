@@ -105,7 +105,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
+     			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.2</version>
@@ -125,11 +125,6 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-			    <groupId>org.codehaus.mojo</groupId>
-			    <artifactId>sonar-maven-plugin</artifactId>
-			    <version>3.7.0</version>
-			</plugin>
                         <plugin>
                            <groupId>org.apache.maven.plugins</groupId>
                            <artifactId>maven-release-plugin</artifactId>
@@ -141,12 +136,18 @@
                               <tagNameFormat>@{project.version}</tagNameFormat>
                            </configuration>
                         </plugin>
+
+                        <plugin>
+			    <groupId>org.codehaus.mojo</groupId>
+			    <artifactId>sonar-maven-plugin</artifactId>
+			    <version>3.7.0</version>                        
+                        </plugin>
                         <plugin>
                             <groupId>org.flywaydb</groupId>
                             <artifactId>flyway-maven-plugin</artifactId>
                             <version>6.3.2</version>
                             <configuration>
-                                <url>${flyway.url}</url>
+                                <url>jdbc:mysql://35.154.66.159:3306</url>
                                 <user>flyuser</user>
                                 <password>Deepanshu@333</password>
                                 <schemas>
