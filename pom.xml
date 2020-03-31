@@ -153,7 +153,12 @@
                                 <schemas>
                                    <schema>newfly</schema>
                                 </schemas>
-                                
+                                <url>jdbc:mysql://13.233.244.148:3306</url>
+                                <user>flyuser</user>
+                                <password>Deepanshu@333</password>
+                                <schemas>
+                                   <schema>flydb</schema>
+                                </schemas>
                             </configuration>
                         </plugin>                            
 		</plugins>
