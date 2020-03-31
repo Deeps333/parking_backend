@@ -154,7 +154,7 @@
                                    <schema>flydb</schema>
                                 </schemas>
                                 <locations>
-                                       <location>migrations</location>
+                                       <location>filesystem:src/main/resources/migrations</location>
                                 </locations>
                             </configuration>
                         </plugin>                            
