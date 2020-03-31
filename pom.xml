@@ -151,7 +151,7 @@
                                 <user>flyuser</user>
                                 <password>Deepanshu@333</password>
                                 <schemas>
-                                   <schema>flydb</schema>
+                                   <schema>newfly</schema>
                                 </schemas>
                                 
                             </configuration>
