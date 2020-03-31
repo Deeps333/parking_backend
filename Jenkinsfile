@@ -21,12 +21,12 @@ pipeline {
 	}
 		stage ('Database Migration'){
 			steps {
-				flywayrunner commandLineArgs: '', credentialsId: 'flyway', flywayCommand: 'migrate', installationName: 'usr/local/bin/flyway', locations: '/var/lib/jenkins/workspace/MigrateDB/target/classes/db/migration' url: 'jdbc:mysql://35.154.66.159:3306/newfly'      
+				flywayrunner commandLineArgs: '', credentialsId: 'flyway', flywayCommand: 'migrate', installationName: 'usr/local/bin/flyway', locations: '/var/lib/jenkins/workspace/MigrateDB/target/classes/db/migration', url: 'jdbc:mysql://35.154.66.159:3306/newfly'      
 			}
 		}
                 stage ('Database Migration UAT'){
 			steps {
-				flywayrunner commandLineArgs: '', credentialsId: 'flyway', flywayCommand: 'migrate', installationName: 'usr/local/bin/flyway', locations: '/var/lib/jenkins/workspace/MigrateDB/target/classes/db/migration' url: 'jdbc:mysql://13.233.244.148:3306/flydb'      
+				flywayrunner commandLineArgs: '', credentialsId: 'flyway', flywayCommand: 'migrate', installationName: 'usr/local/bin/flyway', locations: '/var/lib/jenkins/workspace/MigrateDB/target/classes/db/migration', url: 'jdbc:mysql://13.233.244.148:3306/flydb'      
 			}
 		}
 }
