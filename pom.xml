@@ -136,7 +136,19 @@
                               <tagNameFormat>@{project.version}</tagNameFormat>
                            </configuration>
                         </plugin>
-
+                        <plugin>
+                            <groupId>org.flywaydb</groupId>
+                            <artifactId>flyway-maven-plugin</artifactId>
+                            <version>6.3.2</version>
+                            <configuration>
+                                <url>jdbc:mysql:35.154.66.159:3306</url>
+                                <user>flyuser</user>
+                                <password>Deepanshu@333</password>
+                                <schemas>
+                                   <schema>flydb</schema>
+                                </schemas>
+                            </configuration>
+                        </plugin>                            
 		</plugins>
 	</build>
 </project>
