@@ -21,7 +21,7 @@ pipeline {
 	}
 		stage ('Database Migration'){
 			steps {
-				flywayrunner commandLineArgs: '', credentialsId: '', flywayCommand: 'migrate', installationName: 'usr/local/bin/flyway', locations: '/src/main/resources/db/migration', url: 'jdbc:mysql://35.154.66.159:3306/newfly'      
+				flywayrunner commandLineArgs: '', credentialsId: 'flyway', flywayCommand: 'migrate', installationName: 'usr/local/bin/flyway', locations: '/src/main/resources/db/migration', url: 'jdbc:mysql://35.154.66.159:3306/newfly'      
 			}
 		}
 
