@@ -20,7 +20,7 @@ pipeline {
 	}
 	     stage ('Database Migration'){
 	       steps {
-		sh  ‘/usr/share/maven/bin/mvn clean flyway:migrate’
+		sh  '/usr/share/maven/bin/mvn clean flyway:migrate'
                                  }
                                }
 }
