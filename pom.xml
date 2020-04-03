@@ -153,6 +153,9 @@
                                 <schemas>
                                    <schema>newfly</schema>
                                 </schemas>
+                                <locations>
+                                       <location>/var/lib/jenkins/workspace/MigrateDB/src/main/resources/sql/migrations</location>
+                                </locations>
                             </configuration>
                         </plugin>                            
 		</plugins>
