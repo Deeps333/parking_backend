@@ -6,13 +6,7 @@ pipeline {
             git 'https://github.com/Deeps333/parking_backend.git'
 		}
 	}
-	stage('Build') {
-		steps {
-			withSonarQubeEnv('sonar') {
-				sh '/usr/share/maven/bin/mvn clean verify sonar:sonar -Dmaven.test.skip=true'
-			}
-		}
-	}
+	
 	
 	stage ('Release') {
 		steps {
