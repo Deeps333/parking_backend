@@ -91,11 +91,11 @@
         <distributionManagement>
 	  <snapshotRepository>
 	    <id>nexus</id>
-	    <url>http://13.233.247.55:8081/nexus/content/repositories/snapshots</url>
+	    <url>http://3.15.223.171:8081/nexus/content/repositories/snapshots/</url>
 	  </snapshotRepository>
           <repository>
            <id>nexus-releases</id>
-           <url>http://13.233.247.55:8081/nexus/content/repositories/releases/</url>
+           <url>http://3.15.223.171:8081/nexus/content/repositories/releases/</url>
           </repository>
 	</distributionManagement>
 	
@@ -147,11 +147,11 @@
                             <artifactId>flyway-maven-plugin</artifactId>
                             <version>6.3.2</version>
                             <configuration>
-                                <url>jdbc:mysql://13.233.247.55:3306</url>
+                                <url>jdbc:mysql://3.15.223.171:3306</url>
                                 <user>flyuser</user>
                                 <password>Deepanshu@333</password>
                                 <schemas>
-                                   <schema>newfly</schema>
+                                   <schema>ingdb</schema>
                                 </schemas>
                                 
                             </configuration>
